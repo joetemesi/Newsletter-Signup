@@ -1,0 +1,1 @@
+## A Newsletter signup web app integrated with the mailchimp api.
