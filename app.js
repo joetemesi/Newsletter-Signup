@@ -4,7 +4,7 @@ const request = require("request");
 const https = require("https");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -42,10 +42,10 @@ app.post("/", function(req, res){
     };
 
    const jsonData = JSON.stringify(data);
-   const url = "";
+   const url = process.env.MAILCHIMP_URL;
    const options = {
     method: "POST",
-    auth: ""
+    auth: process.env.MAILCHIMP_AUTH
    }
 
    const request = https.request(url, options, function(response) {
