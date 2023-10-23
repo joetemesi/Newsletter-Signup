@@ -39,7 +39,7 @@ app.post("/", function (req, res) {
     const url = process.env.MAILCHIMP_URL;
     const options = {
         method: "POST",
-        auth: process.env.MAILCHIMP_AUTH 
+        auth: process.env.MAILCHIMP_AUTH
     };
 
     const request = https.request(url, options, function (response) {
@@ -69,6 +69,10 @@ app.post("/", function (req, res) {
     request.on("error", function (error) {
         console.error("Error in API request:", error);
     });
+
+    app.post("/failure", function(req, res){
+        res.redirect("/");
+    })
 
     request.write(jsonData);
     request.end();
