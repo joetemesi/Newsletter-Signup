@@ -1,6 +1,8 @@
 # Newsletter Signup Web Application
 
-Welcome to the Newsletter Signup Web Application project! This application allows users to sign up for a newsletter. It is currently live and hosted on [Render](https://joetemesi-newsletter-signup.onrender.com/).
+Welcome to the Newsletter Signup Web Application project! 
+
+This application allows users to sign up for a newsletter. It is currently live and hosted in the following link on  [Render](https://joetemesi-newsletter-signup.onrender.com/).
 
 ## Getting Started
 
