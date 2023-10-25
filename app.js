@@ -17,7 +17,7 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/signup.html");
 });
 
-app.post("/", function (req, res) {
+app.post("/", function (req, res) { // home route
     var firstName1 = req.body.firstName;
     var lastName1 = req.body.lastName;
     var email1 = req.body.email;
@@ -42,7 +42,7 @@ app.post("/", function (req, res) {
         auth: process.env.MAILCHIMP_AUTH
     };
 
-    const request = https.request(url, options, function (response) {
+    const request = https.request(url, options, function (response) { //send request to api
         let responseData = ''; // Rename the variable to avoid conflict
 
         response.on("data", function (chunk) {
@@ -70,8 +70,8 @@ app.post("/", function (req, res) {
         console.error("Error in API request:", error);
     });
 
-    app.post("/failure", function(req, res){
-        res.redirect("/");
+    app.post("/failure", function(req, res){ //failure route
+        res.redirect("/"); // redirect to homepage
     })
 
     request.write(jsonData);
